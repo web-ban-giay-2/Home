@@ -1,10 +1,6 @@
 import Header from "./Home/Header.tsx"
-import Index from "./Home/Index.tsx"
-import { Outlet, Route, Routes, useLocation } from "react-router-dom"
-import Shop from "./Home/Shop.tsx"
-import { useEffect, useState } from "react"
-import ProductDetail from "./Home/ProductDetail.tsx"
-import Card from "./Home/Card.tsx"
+import { Outlet, useLocation } from "react-router-dom"
+import { useEffect } from "react"
 
 export const LinkImg = "https://localhost:7080/api/Image/get-pro-img/"
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { Link, useParams } from "react-router-dom"
 import { LinkImg } from "../Layout"
 
@@ -38,7 +38,6 @@ type imgType = {
 
 const ProductDetail = () => {
   const [product, setProduct] = useState<ProductType>({} as ProductType)
-  const [cart, setCart] = useState<CartItem[]>([])
   const [userId, username] = localStorage.getItem("user")?.split(",") || []
   const [productDetail, setProductDetail] = useState<{ id: "int"; size: number; quantity: "int"; productId: "int" }[]>([])
   const [images, setImages] = useState<imgType[]>([])
@@ -89,6 +88,7 @@ const ProductDetail = () => {
       alert("Bạn phải đăng nhập để mua hàng")
       return location.href = "/dang-nhap"
     }
+    console.log(username)
     let cart: CartItem[] = JSON.parse(localStorage.getItem("cart_" + userId) || "[]")
 
     // Kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa
@@ -103,11 +103,6 @@ const ProductDetail = () => {
     }
 
     localStorage.setItem("cart_" + userId, JSON.stringify(cart))
-
-    const storedCart = localStorage.getItem("cart_" + userId)
-    if (storedCart) {
-      setCart(JSON.parse(storedCart))
-    }
   }
 
   const handleAddToCart = () => {

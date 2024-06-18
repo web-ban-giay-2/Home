@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import Baner from "./Baner"
 import CardPro from "./CardPro"
-import { useLocation } from "react-router-dom"
 import SP_banChay from "./SP_banChay"
 export interface ProTYpe {
   id: number

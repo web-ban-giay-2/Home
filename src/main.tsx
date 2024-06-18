@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Index from './components/Home/Index.tsx'
 import HomeLayout from './components/Layout.tsx';

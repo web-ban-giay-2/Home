@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 
 import "../../assets/vendors/linericon/style.css"
 import "../../assets/vendors/nouislider/nouislider.min.css"
@@ -9,6 +9,7 @@ const Card = () => {
   const [UserId, username] = localStorage.getItem("user")?.split(",") || []
   useEffect(() => {
     const getCart = () => {
+      console.log(username)
       const storedCart = localStorage.getItem("cart_" + UserId)
       if (storedCart) {
         setCart(JSON.parse(storedCart))
@@ -138,6 +139,11 @@ const Card = () => {
                             </td>
                             <td>
                               <h5>{item.price * item.quantity}đ</h5>
+                            </td>
+                            <td>
+                              <div className="btn" style={{ color: "red" }} onClick={() => removeFromCart(item.productId)}>
+                                <i className="fa-solid fa-x"></i>
+                              </div>
                             </td>
                           </tr>
                         )

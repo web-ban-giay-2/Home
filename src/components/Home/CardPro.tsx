@@ -1,9 +1,6 @@
 import { Link } from "react-router-dom"
 
 
-
-
-
 const CardPro = (pro : any) => {
 
   return (

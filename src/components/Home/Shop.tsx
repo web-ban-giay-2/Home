@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react"
 import CardPro from "./CardPro"
-import SmalCardPro from "./SmalCardPro"
 import SP_banChay from "./SP_banChay"
 
 type ProTYpe = {
@@ -24,7 +23,6 @@ type ProTYpe = {
 
 const Shop = () => {
   const [proData, setProData] = useState<ProTYpe[]>([])
-  const [oldProData, setOldProData] = useState<ProTYpe[]>([])
   const [data, setData] = useState<ProTYpe[]>([])
   let [thuong_hieu, setThuongHieu] = useState("all")
   const [trademark, setTrademark] = useState<
